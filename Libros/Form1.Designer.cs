@@ -35,6 +35,8 @@ namespace Libros
             this.txt_consulta = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_muestra = new System.Windows.Forms.DataGridView();
+            this.seleccionaConsulta = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_muestra)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +65,7 @@ namespace Libros
             // btn_consulta
             // 
             this.btn_consulta.BackColor = System.Drawing.Color.BurlyWood;
-            this.btn_consulta.Location = new System.Drawing.Point(12, 268);
+            this.btn_consulta.Location = new System.Drawing.Point(12, 229);
             this.btn_consulta.Name = "btn_consulta";
             this.btn_consulta.Size = new System.Drawing.Size(174, 51);
             this.btn_consulta.TabIndex = 2;
@@ -81,11 +83,11 @@ namespace Libros
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 332);
+            this.label1.Location = new System.Drawing.Point(12, 292);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 20);
+            this.label1.Size = new System.Drawing.Size(77, 20);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Nombre del Autor:";
+            this.label1.Text = "Filtrar por:";
             // 
             // dgv_muestra
             // 
@@ -97,12 +99,36 @@ namespace Libros
             this.dgv_muestra.Size = new System.Drawing.Size(614, 340);
             this.dgv_muestra.TabIndex = 5;
             // 
+            // seleccionaConsulta
+            // 
+            this.seleccionaConsulta.FormattingEnabled = true;
+            this.seleccionaConsulta.Items.AddRange(new object[] {
+            "Todo",
+            "Autor",
+            "Nombre Libro",
+            "cantidad"});
+            this.seleccionaConsulta.Location = new System.Drawing.Point(12, 315);
+            this.seleccionaConsulta.Name = "seleccionaConsulta";
+            this.seleccionaConsulta.Size = new System.Drawing.Size(151, 28);
+            this.seleccionaConsulta.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 345);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(129, 20);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Escribir busqueda:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AntiqueWhite;
             this.ClientSize = new System.Drawing.Size(835, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.seleccionaConsulta);
             this.Controls.Add(this.dgv_muestra);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_consulta);
@@ -125,6 +151,8 @@ namespace Libros
         private System.Windows.Forms.TextBox txt_consulta;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgv_muestra;
+        private System.Windows.Forms.ComboBox seleccionaConsulta;
+        private System.Windows.Forms.Label label2;
     }
 }
 
