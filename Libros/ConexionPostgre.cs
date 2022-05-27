@@ -35,9 +35,19 @@ namespace Libros
 
         }
 
-        public DataTable consulta(String autor)
+        public DataTable consultaAutor(String autor)
         {
             String query = "select * from libros where autor = '" + autor + "'";
+            NpgsqlCommand conector = new NpgsqlCommand(query, conexion);
+            NpgsqlDataAdapter datos = new NpgsqlDataAdapter(conector);
+            DataTable tabla = new DataTable();
+            datos.Fill(tabla);
+            return tabla;
+        }
+
+        public DataTable consultaLibro(String nombre)
+        {
+            String query = "select * from libros where nombre = '" + nombre + "'";
             NpgsqlCommand conector = new NpgsqlCommand(query, conexion);
             NpgsqlDataAdapter datos = new NpgsqlDataAdapter(conector);
             DataTable tabla = new DataTable();

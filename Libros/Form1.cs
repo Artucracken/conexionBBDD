@@ -31,13 +31,17 @@ namespace Libros
 
         private void btn_consulta_Click(object sender, EventArgs e)
         {
-            if (txt_consulta.Text == "")
+            if(seleccionaConsulta.Text == "Nombre Libro")
+            {
+                dgv_muestra.DataSource = conectando.consultaLibro(txt_consulta.Text);
+            }
+            else if (seleccionaConsulta.Text == "Todo")
             {
                 dgv_muestra.DataSource = conectando.consulta();
             }
-            else
+            else if (seleccionaConsulta.Text == "Autor")
             {
-                dgv_muestra.DataSource = conectando.consulta(txt_consulta.Text);
+                dgv_muestra.DataSource = conectando.consultaAutor(txt_consulta.Text);
             }
         }
     }
